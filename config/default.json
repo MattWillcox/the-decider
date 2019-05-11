@@ -1,0 +1,72 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "c9f1b5231462794a906dc0749fedc94b45dfb80a7ee78574aeb86e4bfd7fc69ce37980509e9e348c856dc4a622fa288022a8dd7c30e2cb5a48f6beb5ef41de4be61318e535a052f3d64ea593f479166f02765cbdea6947d185cc303043196c6442a2a1799802ddf0bb8cacb133d74940ad79a0f453b01c28ad6042cc7bc7657fb95de306f7ecc865f3f622366300a6b65413fc968bfebe04370b47f9d7a32ac86ed383500f6d667a39e7111effe188bd50d949a9a7761566382aae253ea2faac8f42731cfb7a7ef70c8eaad88016940ce1728d3d0acea34d3b38a6bf9721f624d259e5122fca24b5f292c3494e54f5741852ae08385c6288602d4e7fd8bcfb14",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "successRedirect": "/",
+      "scope": [
+        "profile openid email"
+      ]
+    },
+    "facebook": {
+      "clientID": "your facebook client id",
+      "clientSecret": "your facebook client secret",
+      "successRedirect": "/",
+      "scope": [
+        "public_profile",
+        "email"
+      ],
+      "profileFields": [
+        "id",
+        "displayName",
+        "first_name",
+        "last_name",
+        "email",
+        "gender",
+        "profileUrl",
+        "birthday",
+        "picture",
+        "permissions"
+      ]
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  },
+  "postgres": {
+    "client": "pg",
+    "connection": "postgres://postgres:root@localhost:5432/decider"
+  }
+}
