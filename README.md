@@ -8,13 +8,27 @@ This project uses [Feathers](http://feathersjs.com). An open source web framewor
 
 ## Getting Started
 
-Getting up and running is as easy as 1, 2, 3.
+### Server
 
 1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 2. Install your dependencies
 
     ```
     cd path/to/the-decider; npm install
+    ```
+
+3. Start your app
+
+    ```
+    npm start
+    ```
+    
+### WWW
+
+1. Change into app directory
+
+    ```
+    cd path/to/the-decider/app
     ```
 
 3. Start your app
